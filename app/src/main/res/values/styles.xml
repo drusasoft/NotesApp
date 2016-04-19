@@ -1,0 +1,27 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+
+        <item name="colorPrimary">@color/colorPrimary</item>
+
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+
+        <!--   theme UI controls like checkboxes and text fields e.g. FloatActionButton -->
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:windowBackground">@color/fondoPantalla</item>
+    </style>
+
+    <!-- Se definen los estilo para ToolBar-->
+        <style name="AppTheme.toolBarStyle" parent="ThemeOverlay.AppCompat.Light">
+            <item name="android:background">@color/colorPrimary</item>
+        </style>
+
+        <style name="AppTheme.toolBarTextStyle" parent="TextAppearance.AppCompat.Title">
+            <item name="android:textStyle">bold</item>
+            <item name="android:textColor">@color/negro</item>
+        </style>
+    <!-- fin estilo Toolbar-->
+
+
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:dssoft="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/menu_newNote"
+        android:title="@string/menuNuevaNota"
+        android:icon="@android:drawable/ic_menu_save"
+        dssoft:showAsAction="always"/>
+
+</menu>

@@ -1,0 +1,49 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/fondoPantalla</item>
+
+        <!-- enable window content transitions -->
+        <item name="android:windowContentTransitions">true</item>
+
+        <!--se definen las transiciones entre actividades -->
+        <item name="android:windowEnterTransition">@android:transition/fade</item>
+        <item name="android:windowExitTransition">@android:transition/explode</item>
+
+        <!-- specify shared element transitions -->
+        <item name="android:windowSharedElementEnterTransition">
+            @transition/change_image_transform</item>
+        <item name="android:windowSharedElementExitTransition">
+            @transition/change_image_transform</item>
+    </style>
+
+    <!-- En esta aplicacion he tenido que definir estilos para la toolbar en los dos archivos de stilo
+    ya que en esta version de la libreria appcompat la opcion colorcontrolnormal paa cambiar el color
+    de los botones de la toolbar (la flecha para ir aatas etc) solo funciona en los dispositivos > 21
+    en los dispositivos con version inferior siempre se ve de color negor (Fallo de Google...tendrian que cogerme a mi!!!!)-->
+
+    <!-- Se definen los estilo para ToolBar-->
+    <style name="AppTheme.toolBarStyle" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="colorControlNormal">@color/colorBlanco</item>
+    </style>
+
+    <style name="AppTheme.toolBarTextStyle" parent="TextAppearance.AppCompat.Title">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/colorBlanco</item>
+    </style>
+
+    <style name="AppTheme.searchBarStyle" parent="Widget.AppCompat.SearchView.ActionBar">
+        <item name="android:textColorHint">@color/colorBlanco</item>
+        <item name="android:editTextColor">@color/colorBlanco</item>
+    </style>
+    <!-- fin estilo Toolbar-->
+
+
+</resources>

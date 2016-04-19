@@ -1,0 +1,39 @@
+<resources>
+
+    <!--Analitycs ya que la libreria nueva de mierda da un fallo si tienes mas idiomas en la App al generar el APK
+    y en el fichero resuroces que se genera automaticamente no deja estos string con el atributo translatable="false"-->
+    <string name="ga_trackingId">UA-56526101-12</string>
+    <string name="google_app_id">1:1069681714147:android:62455f326c8cb56b</string>
+    <!-- Fin Analitycs-->
+
+    <string name="app_name">Notas</string>
+    <string name="errBD">Se ha producido un Error al guardar la nueva nota</string>
+    <string name="errBD2">Se ha producido un Error al eliminar datos de la Base de Datos</string>
+    <string name="errBD3">Se ha producido un Error al modificar datos de la Base de Datos</string>
+
+    <!-- Pantalla Nueva Nota -->
+    <string name="menuNuevaNota">Guardar</string>
+    <string name="titPantallaNueva">Nueva Nota</string>
+    <string name="txtTitulo">Título</string>
+    <string name="txtContenido">Contenido</string>
+    <string name="txtCargarImagen">Cargar Imagen</string>
+    <string name="titDialogEliminar">Quitar Imagen</string>
+    <string name="txtDialogEliminar">¿Quieres descartar la imagen seleccionada?</string>
+    <string name="btnSi">Si</string>
+    <string name="btnNo">No</string>
+    <string name="errNotaVacia">No hay contenido que guardar. Nota descartada</string>
+    <!-- Fin Pantalla Nueva Nota -->
+
+    <!-- Pantalla Modificar Nota -->
+    <string name="titPantallaModificar">Modificar Nota</string>
+    <string name="menuModNota">Modificar</string>
+    <string name="txtCargarImagenMod_1">Cargar Imagen</string>
+    <string name="txtCargarImagenMod_2">Imagen Cargada</string>
+    <!-- Fin Pantalla Modificar Nota -->
+
+    <!-- Pantalla Zoom -->
+    <string name="titPantallaZoom">Imagen</string>
+    <!-- Fin Pantalla Zoom -->
+
+
+</resources>

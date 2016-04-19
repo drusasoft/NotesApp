@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="dssoft.com.notesapp">
+
+    <!-- Permiso para poder acceder a la galeria -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"></uses-permission>
+
+    <!-- Google Analytics required permissions -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:name=".analytics.AppNotesAnalytics"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:largeHeap="true">
+
+        <!--This meta-data tag is required to use Google Play Services.-->
+        <meta-data android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <!--<meta-data
+            android:name="com.google.android.gms.analytics.globalConfigResource"
+            android:resource="@xml/global_tracker"/>-->
+
+        <service android:name=".widget.WidgetService"
+            android:permission="android.permission.BIND_REMOTEVIEWS"/>
+
+        <activity android:name=".PantallaPrincipal">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".PantallaNuevaNota" android:screenOrientation="portrait" android:parentActivityName=".PantallaPrincipal" android:label="@string/titPantallaNueva"></activity>
+        <activity android:name=".PantallaModificarNota" android:screenOrientation="portrait" android:parentActivityName=".PantallaPrincipal" android:label="@string/titPantallaModificar"></activity>
+        <activity android:name=".PantallaZoom" android:screenOrientation="portrait" android:parentActivityName=".PantallaPrincipal" android:label="@string/titPantallaZoom"></activity>
+        <activity android:name=".PantallaZoomPhotoView" android:screenOrientation="portrait" android:label="@string/titPantallaZoom"></activity>
+
+        <receiver android:name=".widget.WidgetNotas" android:icon="@mipmap/ic_launcher">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"></action>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.dssoft.notasApp.ACTUACLIZAR_WIDGET"></action>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.dssoft.notasApp.LANZAR_APLICACION"></action>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider"
+                android:resource="@xml/descriptor_widget"/>
+        </receiver>
+
+    </application>
+
+</manifest>

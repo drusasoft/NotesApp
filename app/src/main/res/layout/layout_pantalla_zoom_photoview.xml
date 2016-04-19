@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardview_pantalla_zoom_photoView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-4dp"
+        android:layout_marginLeft="-3dp"
+        android:layout_marginRight="-3dp"
+        card_view:elevation="4dp"
+        card_view:cardCornerRadius="0dp">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbarZoomPhotoView"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:theme="@style/AppTheme.toolBarStyle"
+            app:titleTextAppearance="@style/AppTheme.toolBarTextStyle"/>
+
+    </android.support.v7.widget.CardView>
+
+     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/imgZoom"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:transitionName="imgNota"/>
+
+    </LinearLayout>
+
+</LinearLayout>

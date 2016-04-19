@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#673ab7</color>
+    <color name="colorPrimaryDark">#512da8</color>
+    <color name="colorAccent">#b39ddb</color>
+    <color name="fondoPantalla">#e8eaf6</color>
+    <color name="colorBlanco">#ffffff</color>
+    <color name="transparente">#00ffffff</color>
+
+    <color name="verde_claro">#b9e969</color>
+    <color name="naranja_oscuro">#d84315</color>
+    <color name="negro">#000000</color>
+    <color name="gris">#424242</color>
+    <color name="gris_azulado">#90a4ae</color>
+
+</resources>

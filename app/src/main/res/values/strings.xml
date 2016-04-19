@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Notes</string>
+    <string name="errBD">There was an error saving the new note</string>
+    <string name="errBD2">There was an error deleting data from the database</string>
+    <string name="errBD3">There was an error to modify data in the database</string>
+
+    <!-- Pantalla Nueva Nota -->
+    <string name="menuNuevaNota">Save</string>
+    <string name="titPantallaNueva">New Note</string>
+    <string name="txtTitulo">Title</string>
+    <string name="txtContenido">Content</string>
+    <string name="txtCargarImagen">Load Image</string>
+    <string name="titDialogEliminar">Remove Image</string>
+    <string name="txtDialogEliminar">Do you want to discard the selected image?</string>
+    <string name="btnSi">Yes</string>
+    <string name="btnNo">No</string>
+    <string name="errNotaVacia">No content to save. Note discarded</string>
+    <!-- Fin Pantalla Nueva Nota -->
+
+    <!-- Pantalla Modificar Nota -->
+    <string name="titPantallaModificar">Modify Note</string>
+    <string name="menuModNota">Modify</string>
+    <string name="txtCargarImagenMod_1">Load image</string>
+    <string name="txtCargarImagenMod_2">Image Loaded</string>
+    <!-- Fin Pantalla Modificar Nota -->
+
+    <!-- Pantalla Zoom -->
+    <string name="titPantallaZoom">Image</string>
+    <!-- Fin Pantalla Zoom -->
+
+
+</resources>

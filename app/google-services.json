@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_id": "notesapp-1c05b",
+    "project_number": "1069681714147",
+    "name": "NotesApp"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1069681714147:android:62455f326c8cb56b",
+        "client_id": "android:dssoft.com.notesapp",
+        "client_type": 1,
+        "android_client_info": {
+          "package_name": "dssoft.com.notesapp",
+          "certificate_hash": []
+        }
+      },
+      "oauth_client": [],
+      "api_key": [],
+      "services": {
+        "analytics_service": {
+          "status": 2,
+          "analytics_property": {
+            "tracking_id": "UA-56526101-12"
+          }
+        },
+        "cloud_messaging_service": {
+          "status": 1,
+          "apns_config": []
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "google_signin_service": {
+          "status": 1
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "client_info": [],
+  "ARTIFACT_VERSION": "1"
+}

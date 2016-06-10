@@ -20,6 +20,7 @@ import java.util.Map;
 import butterknife.Bind;
 import butterknife.BindColor;
 import butterknife.BindDrawable;
+import butterknife.BindString;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import dssoft.com.notesapp.PantallaZoomPhotoView;
@@ -33,8 +34,8 @@ import dssoft.com.notesapp.transformation.BitmapTransform;
 public class AdaptadorListaNotas extends ArrayAdapter<Nota>
 {
     private static Activity context;
-    private List<Nota> listaNotas;
     private Map<Integer, Integer> mapItemSelecc;
+    private List<Nota> listaNotas;
     private LayoutInflater Inflater;
     private final int MAX_WIDTH = 1024;
     private final int MAX_HEIGHT = 768;
@@ -90,13 +91,16 @@ public class AdaptadorListaNotas extends ArrayAdapter<Nota>
         //Mostramos la fecha de cracion de la Nota
         holder.txtFecha.setText(listaNotas.get(position).getFecha());
 
+        //Guardamos una etiqueta en el ImageView que indica la posision de la nota, ya que despues se utilizara si se pulsa sobre ella
+        holder.imgShare.setTag(position);
+
 
         //Si la nota incluye una imagen entonces de muestra dicha imagen en el ImageView imgNota
         //EN caso contrario se oculta el ImageView
         if(listaNotas.get(position).getImagenUri() != null)
         {
             Uri uri_Imagen = Uri.parse(listaNotas.get(position).getImagenUri());
-            holder.imgNota.setTag(listaNotas.get(position).getImagenUri());
+            holder.imgNota.setTag(listaNotas.get(position).getImagenUri());//Se guarda la Uri de la imagen con el metodo setTag
             holder.imgNota.setVisibility(View.VISIBLE);
 
             //Picasso es muy guay porque si al cargar una imagen da error de memoria (Por ejemplo, porque es muy grande y hay que reducirla mucho)
@@ -106,9 +110,12 @@ public class AdaptadorListaNotas extends ArrayAdapter<Nota>
                     .transform(new BitmapTransform(MAX_WIDTH,MAX_HEIGHT))
                     .error(R.drawable.error_image)
                     .into(holder.imgNota);
+
+
         }else
         {
             holder.imgNota.setVisibility(View.GONE);
+            holder.imgNota.setTag(null);
         }
 
 
@@ -147,6 +154,7 @@ public class AdaptadorListaNotas extends ArrayAdapter<Nota>
 
     }
 
+
     static class ViewHolder
     {
         @Bind(R.id.layoutNota) LinearLayout layoutNota;
@@ -154,12 +162,14 @@ public class AdaptadorListaNotas extends ArrayAdapter<Nota>
         @Bind(R.id.txtContenido) TextView txtContenido;
         @Bind(R.id.txtFecha) TextView txtFecha;
         @Bind(R.id.imgNotaLista) ImageView imgNota;
+        @Bind(R.id.imgShare) ImageView imgShare;
         @BindDrawable(R.drawable.fondo_item_nota) Drawable fondo_item_nota;
         @BindColor(R.color.colorPrimary) int colorPrimary;
         @BindColor(R.color.negro) int colorNegro;
         @BindColor(R.color.gris) int colorGris;
         @BindColor(R.color.naranja_oscuro) int colorNaranja;
         @BindColor(R.color.verde_claro) int colorVerde;
+        @BindString(R.string.compartir) String txtCompartir;
 
         public ViewHolder(View view)
         {
@@ -182,6 +192,27 @@ public class AdaptadorListaNotas extends ArrayAdapter<Nota>
                 context.startActivity(intent, options.toBundle());
             }
 
+        }
+
+        @OnClick(R.id.imgShare)
+        public void compartirNota()//Si se pulsa sobre el icono compartir de nota
+        {
+
+            String contenido = (String) txtContenido.getText();
+
+            //Se comparte el contenido de la nota
+            Intent shareIntent = new Intent();
+            shareIntent.setAction(Intent.ACTION_SEND);
+            shareIntent.putExtra(Intent.EXTRA_TEXT, contenido);
+
+            if(imgNota.getTag() != null)//Si se ha guardado la Uri de la Imagen en el ImageView
+            {
+                Uri imageUri = Uri.parse(imgNota.getTag().toString());
+                shareIntent.putExtra(Intent.EXTRA_STREAM, imageUri);
+            }
+
+            shareIntent.setType("*/*");//para poder incluir imagen y texto en un mismo Intent de compartir indico que el tipo es cualquier cosa
+            context.startActivity(Intent.createChooser(shareIntent,txtCompartir));//Se muestra el menu para que el usuario eleiga la aplicacion para compartir
         }
     }
 }

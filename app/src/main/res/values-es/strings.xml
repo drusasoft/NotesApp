@@ -7,6 +7,7 @@
     <!-- Fin Analitycs-->
 
     <string name="app_name">Notas</string>
+    <string name="compartir">Compartir Nota</string>
     <string name="errBD">Se ha producido un Error al guardar la nueva nota</string>
     <string name="errBD2">Se ha producido un Error al eliminar datos de la Base de Datos</string>
     <string name="errBD3">Se ha producido un Error al modificar datos de la Base de Datos</string>

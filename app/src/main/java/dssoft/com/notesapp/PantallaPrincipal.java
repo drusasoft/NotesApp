@@ -278,7 +278,6 @@ public class PantallaPrincipal extends AppCompatActivity implements SearchView.O
                     }).show();
             //****************************** Fin SnackBar ******************************************
 
-
         }
 
     }
@@ -287,7 +286,7 @@ public class PantallaPrincipal extends AppCompatActivity implements SearchView.O
     public void selecc_Nota_Modificar(int posicion)
     {
 
-        if (mapItemSelecc.get(posicion) != null)//Significa que se ha pulsado sobre un item seleccionado
+        if(mapItemSelecc.get(posicion) != null)//Significa que se ha pulsado sobre un item seleccionado
         {
             //Se deselecciona el item pulsado en la lista
             mapItemSelecc.remove(posicion);//Se elimina el elemento del HashMap que guarda la posicion de los items seleccionados

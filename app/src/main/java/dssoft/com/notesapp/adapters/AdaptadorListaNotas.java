@@ -202,16 +202,22 @@ public class AdaptadorListaNotas extends ArrayAdapter<Nota>
 
             //Se comparte el contenido de la nota
             Intent shareIntent = new Intent();
-            shareIntent.setAction(Intent.ACTION_SEND);
-            shareIntent.putExtra(Intent.EXTRA_TEXT, contenido);
 
-            if(imgNota.getTag() != null)//Si se ha guardado la Uri de la Imagen en el ImageView
+            if(imgNota.getTag() != null)//Si la nota que se quiere compartir tiene imagen
             {
                 Uri imageUri = Uri.parse(imgNota.getTag().toString());
+                shareIntent.setAction(Intent.ACTION_SEND);
+                shareIntent.putExtra(Intent.EXTRA_TEXT, contenido);
                 shareIntent.putExtra(Intent.EXTRA_STREAM, imageUri);
+                shareIntent.setType("image/*");
+
+            }else//si la nota solo incluye texto
+            {
+                shareIntent.setAction(Intent.ACTION_SEND);
+                shareIntent.putExtra(Intent.EXTRA_TEXT, contenido);
+                shareIntent.setType("text/plain");
             }
 
-            shareIntent.setType("*/*");//para poder incluir imagen y texto en un mismo Intent de compartir indico que el tipo es cualquier cosa
             context.startActivity(Intent.createChooser(shareIntent,txtCompartir));//Se muestra el menu para que el usuario eleiga la aplicacion para compartir
         }
     }

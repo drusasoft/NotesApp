@@ -1,46 +1,42 @@
 {
   "project_info": {
-    "project_id": "notesapp-1c05b",
-    "project_number": "1069681714147",
-    "name": "NotesApp"
+    "project_number": "934154642247",
+    "firebase_url": "https://notasapp-ad560.firebaseio.com",
+    "project_id": "notasapp-ad560",
+    "storage_bucket": "notasapp-ad560.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1069681714147:android:62455f326c8cb56b",
-        "client_id": "android:dssoft.com.notesapp",
-        "client_type": 1,
+        "mobilesdk_app_id": "1:934154642247:android:62455f326c8cb56b",
         "android_client_info": {
-          "package_name": "dssoft.com.notesapp",
-          "certificate_hash": []
+          "package_name": "dssoft.com.notesapp"
         }
       },
-      "oauth_client": [],
-      "api_key": [],
+      "oauth_client": [
+        {
+          "client_id": "934154642247-8cmcutfs94cdbfc5hcege5b32pudf2ef.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtlHBEnyNP4tP0-oOswk-4sR4X73RBZAM"
+        }
+      ],
       "services": {
         "analytics_service": {
-          "status": 2,
-          "analytics_property": {
-            "tracking_id": "UA-56526101-12"
-          }
-        },
-        "cloud_messaging_service": {
-          "status": 1,
-          "apns_config": []
+          "status": 1
         },
         "appinvite_service": {
           "status": 1,
           "other_platform_oauth_client": []
         },
-        "google_signin_service": {
-          "status": 1
-        },
         "ads_service": {
-          "status": 1
+          "status": 2
         }
       }
     }
   ],
-  "client_info": [],
-  "ARTIFACT_VERSION": "1"
+  "configuration_version": "1"
 }

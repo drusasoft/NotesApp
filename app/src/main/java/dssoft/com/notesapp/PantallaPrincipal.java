@@ -9,6 +9,7 @@ import android.graphics.drawable.Drawable;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.multidex.MultiDex;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.SearchView;
@@ -33,7 +34,6 @@ import butterknife.OnClick;
 import butterknife.OnItemClick;
 import butterknife.OnItemLongClick;
 import dssoft.com.notesapp.adapters.AdaptadorListaNotas;
-import dssoft.com.notesapp.analytics.AppNotesAnalytics;
 import dssoft.com.notesapp.database.BDAdapter;
 import dssoft.com.notesapp.pojo.Nota;
 import dssoft.com.notesapp.widget.WidgetNotas;
@@ -68,6 +68,7 @@ public class PantallaPrincipal extends AppCompatActivity implements SearchView.O
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pantalla_principal);
+        MultiDex.install(this);
         ButterKnife.bind(this);
 
         setSupportActionBar(toolbar);
@@ -79,13 +80,6 @@ public class PantallaPrincipal extends AppCompatActivity implements SearchView.O
 
         aln = new AdaptadorListaNotas(this, listaNotas, mapItemSelecc);
         listViewNotas.setAdapter(aln);
-
-        // [START shared_tracker]
-        // Obtain the shared Tracker instance.
-        AppNotesAnalytics application = (AppNotesAnalytics) getApplication();
-        mTracker = application.getDefaultTracker();
-        // [END shared_tracker]
-
 
     }
 

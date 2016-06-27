@@ -14,7 +14,7 @@ import dssoft.com.notesapp.pojo.Nota;
  */
 public class BDAdapter
 {
-    private final String crearTabla = "Create Table Notas(id_nota Integer PRIMARY KEY AUTOINCREMENT,titulo String, contenido String, fecha String, imagen_uri String)";
+    private final String crearTabla = "Create Table Notas(id_nota Integer PRIMARY KEY AUTOINCREMENT, titulo String, contenido String, fecha String, imagen_uri String)";
     private final String eliminarTabla = "DROP TABLE IF EXISTS Notas";
     private final String nombreBD = "BDnotas";
 
@@ -141,8 +141,64 @@ public class BDAdapter
         @Override
         public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion)
         {
+
             db.execSQL(eliminarTabla);
             db.execSQL(crearTabla);
+
+            /*Esto es una prueba en la que guardo lo que hubiera en la tabla y despues lo vuelvo a insertar
+
+
+            //Se guarda todas las notas de la base de datos en una lista
+            Cursor cursor = db.rawQuery("Select * from Notas",null);
+            List<Nota> listaNotas = new ArrayList<Nota>();
+
+            if(cursor != null)
+            {
+                if(cursor.getCount() >0)
+                {
+                    cursor.moveToFirst();
+                    Nota nota = new Nota();
+                    nota.setIdNota(cursor.getInt(0));
+                    nota.setTitulo(cursor.getString(1));
+                    nota.setContenido(cursor.getString(2));
+                    nota.setFecha(cursor.getString(3));
+                    nota.setImagenUri(cursor.getString(4));
+                    listaNotas.add(nota);
+
+                    while(cursor.moveToNext())
+                    {
+                        nota = new Nota();
+                        nota.setIdNota(cursor.getInt(0));
+                        nota.setTitulo(cursor.getString(1));
+                        nota.setContenido(cursor.getString(2));
+                        nota.setFecha(cursor.getString(3));
+                        nota.setImagenUri(cursor.getString(4));
+                        listaNotas.add(nota);
+                    }
+                }
+
+            }
+
+            Log.e("Actualizacion", "BD");
+            db.execSQL(eliminarTabla);
+            db.execSQL(crearTabla);
+
+            //lleemos los elemetos de la lista y lo guardamos en la tabla
+
+            for(Nota nota: listaNotas)
+            {
+                ContentValues contentValues = new ContentValues();
+                contentValues.put("titulo", nota.getTitulo());
+                contentValues.put("contenido", nota.getContenido());
+                contentValues.put("fecha", nota.getFecha());
+                contentValues.put("imagen_uri", nota.getImagenUri());
+
+                db.insert("Notas", null, contentValues);
+            }
+
+
+            Log.e("Fin Actualizacion", "BD");
+            */
         }
     }
 

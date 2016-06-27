@@ -1,11 +1,4 @@
 <resources>
-
-    <!--Analitycs ya que la libreria nueva de mierda da un fallo si tienes mas idiomas en la App al generar el APK
-    y en el fichero resuroces que se genera automaticamente no deja estos string con el atributo translatable="false"-->
-    <string name="ga_trackingId">UA-56526101-12</string>
-    <string name="google_app_id">1:1069681714147:android:62455f326c8cb56b</string>
-    <!-- Fin Analitycs-->
-
     <string name="app_name">Notas</string>
     <string name="compartir">Compartir Nota</string>
     <string name="errBD">Se ha producido un Error al guardar la nueva nota</string>

@@ -16,7 +16,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
-
 import java.util.Calendar;
 import butterknife.Bind;
 import butterknife.ButterKnife;

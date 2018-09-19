@@ -451,7 +451,7 @@ public class PantallaPrincipal extends AppCompatActivity implements SearchView.O
 
         Iterator it = mapItemSelecc.entrySet().iterator();
 
-        while(it.hasNext())
+        while(it.hasNext() && listaNotas.size()>0)
         {
             Map.Entry entry = (Map.Entry) it.next();
             bdAdapter.eliminar_Nota(listaNotas.get((int)entry.getKey()));

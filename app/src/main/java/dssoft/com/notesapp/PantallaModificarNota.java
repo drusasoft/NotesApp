@@ -19,6 +19,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.OnLongClick;
+import butterknife.OnTextChanged;
 import dssoft.com.notesapp.database.BDAdapter;
 import dssoft.com.notesapp.pojo.Nota;
 import dssoft.com.notesapp.transformation.BitmapTransform;
@@ -34,10 +35,14 @@ public class PantallaModificarNota extends AppCompatActivity
     @Bind(R.id.editContenidoMod) EditText editTextContenido;
     @Bind(R.id.txtImgModNota) TextView txtImgModNota;
     @Bind(R.id.imgModNota) ImageView imgModNota;
+
     private final int LOAD_IMAGE_CODE = 300;
     private final int MAX_WIDTH = 1024;
     private final int MAX_HEIGHT = 768;
     private int idNota;
+
+    private boolean editTituloMayusculas=true;
+    private boolean editContenidoMayusculas=true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -231,6 +236,47 @@ public class PantallaModificarNota extends AppCompatActivity
 
         return true;
     }
+
+
+    //Se ejecuta cuando se cambia el texto del EditText titulo
+    @OnTextChanged(R.id.editTituloMod)
+    public void cambioTextoTitulo()
+    {
+        //se pone la primera letra del titulo en mayusculas
+        if(editTextTitulo.getText().toString().length() == 1 && editTituloMayusculas)
+        {
+            String contenido = editTextTitulo.getText().toString().toUpperCase();
+            editTituloMayusculas = false;
+            editTextTitulo.setText(contenido);
+            editTextTitulo.setSelection(1);
+        }else
+        {
+            if(editTextTitulo.getText().toString().length() == 0)
+                editTituloMayusculas = true;
+        }
+    }
+
+
+    //Se ejecuta cuando se cambia el texto del EditText contenido
+    @OnTextChanged(R.id.editContenidoMod)
+    public void cambioTextoContenido()
+    {
+
+        //se pone la primera letra del contenido en mayusculas
+        if(editTextContenido.getText().toString().length() == 1 && editContenidoMayusculas)
+        {
+            String contenido = editTextContenido.getText().toString().toUpperCase();
+            editContenidoMayusculas = false;
+            editTextContenido.setText(contenido);
+            editTextContenido.setSelection(1);
+
+        }else
+        {
+            if(editTextContenido.getText().toString().length() == 0)
+                editContenidoMayusculas = true;
+        }
+    }
+
 
     //Se Obtiene la fecha del sistema y se pone en un formato que me gusta a mi
     // (si el numero es menor de 0) se le añade un cero delante
